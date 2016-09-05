@@ -3,7 +3,8 @@
 namespace PhpConsole\Silex;
 
 use Silex\Application;
-use Silex\ServiceProviderInterface;
+use Pimple\ServiceProviderInterface;
+use Pimple\Container;
 use PhpConsole\Connector;
 use PhpConsole\Helper;
 use PhpConsole\Storage;
@@ -109,9 +110,9 @@ class ServiceProvider implements ServiceProviderInterface {
 	 * This method should only be used to configure services and parameters.
 	 * It should not get services.
 	 *
-	 * @param Application $app An Application instance
+	 * @param Container $app An Application instance
 	 */
-	public function register(Application $app) {
+	public function register(Container $app) {
 		$connector = $this->getConnector();
 		$handler = $this->getHandler();
 
